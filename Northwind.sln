@@ -37,7 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Persistence", "No
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.WebUI", "Northwind.WebUI\Northwind.WebUI.csproj", "{B3A105C1-F3E0-4290-A330-D0D3F29D2B26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.WebUI.FunctionalTests", "Northwind.WebUI.FunctionalTests\Northwind.WebUI.FunctionalTests.csproj", "{A5A16118-2C05-4433-8C39-384AB81E07CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.WebUI.FunctionalTests", "Northwind.WebUI.FunctionalTests\Northwind.WebUI.FunctionalTests.csproj", "{A5A16118-2C05-4433-8C39-384AB81E07CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{71F88D0C-DA92-4FD7-B671-12FDB62C83FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Api", "Northwind.Api\Northwind.Api.csproj", "{993220B6-3D50-4D72-9E48-56949EC06329}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,10 @@ Global
 		{A5A16118-2C05-4433-8C39-384AB81E07CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5A16118-2C05-4433-8C39-384AB81E07CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5A16118-2C05-4433-8C39-384AB81E07CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993220B6-3D50-4D72-9E48-56949EC06329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993220B6-3D50-4D72-9E48-56949EC06329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993220B6-3D50-4D72-9E48-56949EC06329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993220B6-3D50-4D72-9E48-56949EC06329}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +107,8 @@ Global
 		{34BB0A51-74B9-46B6-BEAA-94A914F552EE} = {1EC1EEFF-3888-4125-9229-623C564F3E7E}
 		{B3A105C1-F3E0-4290-A330-D0D3F29D2B26} = {833DEA57-A970-418C-831C-2355B8294766}
 		{A5A16118-2C05-4433-8C39-384AB81E07CA} = {9FEDAEFB-297C-4201-8FAA-F502F94CAFED}
+		{71F88D0C-DA92-4FD7-B671-12FDB62C83FC} = {4B785E7E-2F35-4198-BD73-D2B861E5518A}
+		{993220B6-3D50-4D72-9E48-56949EC06329} = {71F88D0C-DA92-4FD7-B671-12FDB62C83FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D5D0CA3-C6B8-436C-82B0-39820C8A13FA}
