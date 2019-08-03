@@ -43,6 +43,10 @@ namespace Northwind.Api
             builder.Services.AddDbContext<INorthwindDbContext, NorthwindDbContext>(options =>
                 options.UseSqlServer(SqlConnection));
 
+            var concreteContext = (NorthwindDbContext)builder.Services.BuildServiceProvider().GetService<INorthwindDbContext>();
+            concreteContext.Database.Migrate();
+            NorthwindInitializer.Initialize(concreteContext);
+
             //add fluent validation
             //TODO: Add helper method when available e.g. .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateCustomerCommandValidator>());
             //see https://github.com/JeremySkinner/FluentValidation/issues/1205
@@ -51,6 +55,8 @@ namespace Northwind.Api
             builder.Services.AddTransient<IValidator<DeleteCustomerCommand>, DeleteCustomerCommandValidator>();
             builder.Services.AddTransient<IValidator<UpdateCustomerCommand>, UpdateCustomerCommandValidator>();
             builder.Services.AddTransient<IValidator<GetCustomerDetailQuery>, GetCustomerDetailQueryValidator>();
+
+            
         }
     }
 }
