@@ -12,6 +12,8 @@ using Northwind.Application.Infrastructure.AutoMapper;
 using MediatR;
 using Northwind.Application.Products.Queries.GetProduct;
 using Northwind.Application.Infrastructure;
+using FluentValidation;
+using Northwind.Application.Customers.Commands.CreateCustomer;
 
 [assembly: FunctionsStartup(typeof(Northwind.Api.Startup))]
 
@@ -37,6 +39,12 @@ namespace Northwind.Api
             string SqlConnection = Environment.GetEnvironmentVariable("SqlConnectionString");
             builder.Services.AddDbContext<INorthwindDbContext, NorthwindDbContext>(options =>
                 options.UseSqlServer(SqlConnection));
+
+            //add fluent validation
+            //TODO: Add helper method when available e.g. .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateCustomerCommandValidator>());
+            //see https://github.com/JeremySkinner/FluentValidation/issues/1205
+
+            builder.Services.AddTransient<IValidator<CreateCustomerCommand>, CreateCustomerCommandValidator>();
         }
     }
 }
