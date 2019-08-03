@@ -7,13 +7,24 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using MediatR;
+using Northwind.Application.Customers.Queries.GetCustomersList;
 
 namespace Northwind.Api
 {
-    public static class Function1
+    public class CustomersFunction
     {
-        [FunctionName("Function1")]
-        public static async Task<IActionResult> Run(
+
+        private readonly IMediator _mediator;
+
+        public CustomersFunction(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+
+        [FunctionName("GetAllCustomers")]
+        public static async Task<ActionResult<CustomersListViewModel>> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {

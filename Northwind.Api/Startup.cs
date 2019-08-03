@@ -1,22 +1,22 @@
-﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+﻿using AutoMapper;
+using FluentValidation;
+using MediatR;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using Northwind.Persistence;
-using Northwind.Application.Interfaces;
-using Northwind.Common;
-using Northwind.Infrastructure;
-using AutoMapper;
-using System.Reflection;
-using Northwind.Application.Infrastructure.AutoMapper;
-using MediatR;
-using Northwind.Application.Products.Queries.GetProduct;
-using Northwind.Application.Infrastructure;
-using FluentValidation;
 using Northwind.Application.Customers.Commands.CreateCustomer;
 using Northwind.Application.Customers.Commands.DeleteCustomer;
 using Northwind.Application.Customers.Commands.UpdateCustomer;
 using Northwind.Application.Customers.Queries.GetCustomerDetail;
+using Northwind.Application.Infrastructure;
+using Northwind.Application.Infrastructure.AutoMapper;
+using Northwind.Application.Interfaces;
+using Northwind.Application.Products.Queries.GetProduct;
+using Northwind.Common;
+using Northwind.Infrastructure;
+using Northwind.Persistence;
+using System;
+using System.Reflection;
 
 [assembly: FunctionsStartup(typeof(Northwind.Api.Startup))]
 
