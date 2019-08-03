@@ -14,6 +14,9 @@ using Northwind.Application.Products.Queries.GetProduct;
 using Northwind.Application.Infrastructure;
 using FluentValidation;
 using Northwind.Application.Customers.Commands.CreateCustomer;
+using Northwind.Application.Customers.Commands.DeleteCustomer;
+using Northwind.Application.Customers.Commands.UpdateCustomer;
+using Northwind.Application.Customers.Queries.GetCustomerDetail;
 
 [assembly: FunctionsStartup(typeof(Northwind.Api.Startup))]
 
@@ -45,6 +48,9 @@ namespace Northwind.Api
             //see https://github.com/JeremySkinner/FluentValidation/issues/1205
 
             builder.Services.AddTransient<IValidator<CreateCustomerCommand>, CreateCustomerCommandValidator>();
+            builder.Services.AddTransient<IValidator<DeleteCustomerCommand>, DeleteCustomerCommandValidator>();
+            builder.Services.AddTransient<IValidator<UpdateCustomerCommand>, UpdateCustomerCommandValidator>();
+            builder.Services.AddTransient<IValidator<GetCustomerDetailQuery>, GetCustomerDetailQueryValidator>();
         }
     }
 }
